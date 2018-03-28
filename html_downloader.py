@@ -1,5 +1,6 @@
 
 import urllib.request
+import ssl
 
 class HtmlDownloader(object):
     def download(self, url):
@@ -12,3 +13,5 @@ class HtmlDownloader(object):
             return None
 
         return response.read()
+
+    ssl._create_default_https_context = ssl._create_unverified_context

@@ -25,8 +25,8 @@ class SpiderMain(object):
                     break
 
                 count = count+1
-            except:
-                print('craw failed')
+            except RuntimeError as err:
+                print('craw failed:{0}'.format(err))
 
         self.outputer.output_html()
 
